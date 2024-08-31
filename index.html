@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação Programação</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            padding: 0;
+            box-sizing: border-box;
+            color: #fff;
+            background-color: #000;
+        }
+
+        .slide-content {
+            text-align: center; /* Centraliza o texto horizontalmente */
+            display: flex;      /* Usa flexbox para o layout */
+            flex-direction: column; /* Alinha itens em uma coluna */
+            justify-content: center; /* Centraliza verticalmente */
+            align-items: center; /* Alinha itens no centro horizontalmente */
+            height: 100vh; /* Define a altura do container como 100% da altura da viewport */
+        }
+
+        .presentation {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transform: scale(1.1);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .slide h1 {
+            font-size: 4rem;
+            margin: 0;
+            padding-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.9);
+        }
+
+        .slide p {
+            font-size: 1.5rem;
+            max-width: 80%;
+            margin: 0;
+            color: #ddd;
+            line-height: 1.6;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+        }
+
+        .slide img {
+            width: 80%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            margin-top: 20px;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        pre {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            overflow: auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            font-size: 1.2rem;
+            color: #eee;
+            text-align: left;
+            width: 80%;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+
+        .nav-buttons {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .nav-button {
+            background: #ff69b4;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .nav-button:hover {
+            background: #ff1493;
+            transform: scale(1.05);
+        }
+
+        .nav-button:disabled {
+            background: #aaa;
+            cursor: not-allowed;
+        }
+
+        .nav-button.prev {
+            margin-left: 10px;
+        }
+
+        .nav-button.next {
+            margin-right: 10px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="presentation">
+        <div class="slide active" id="slide1" style="background-image: url('https://source.unsplash.com/1920x1080/?psychedelic');">
+            <div class="slide-content">
+                <h1>Descrição Narrativa</h1>
+                <p>A descrição narrativa é uma técnica essencial para relatar eventos e processos com detalhes e clareza. Ela proporciona uma visão completa dos acontecimentos, destacando a sequência e o contexto, e é usada para criar uma imagem vívida na mente do leitor ou ouvinte.</p>
+            </div>
+        </div>
+        <div class="slide" id="slide2" style="background-image: url('https://source.unsplash.com/1920x1080/?flowchart,abstract');">
+            <div class="slide-content">
+                <h1>Fluxograma</h1>
+                <p>Fluxogramas são representações gráficas que utilizam símbolos para ilustrar o fluxo de processos ou sistemas. Eles ajudam a visualizar e entender a sequência e a interação das etapas, facilitando a análise e a melhoria dos processos.</p>
+                <img src="teste2.jpg" alt="Descrição da Imagem">
+            </div>
+            
+        </div>
+        
+        <div class="slide" id="slide3" style="background-image: url('https://source.unsplash.com/1920x1080/?code,neon');">
+            <div class="slide-content">
+                <h1>Pseudocódigo</h1>
+                <p>Pseudocódigo é uma ferramenta para descrever algoritmos de forma simples e legível, sem se prender à sintaxe de uma linguagem específica. Ele permite expressar a lógica e os passos necessários para resolver um problema antes da implementação em um código real.</p>
+                <pre><code>
+                        Algoritmo Exemplo:
+                        Início
+                            Leia valor
+                            Se valor > 10 Então
+                                Escreva "Valor é maior que 10"
+                            Senão
+                                Escreva "Valor é menor ou igual a 10"
+                            Fim Se
+                        Fim
+                </code></pre>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="nav-buttons">
+        <button class="nav-button prev" id="prevBtn" disabled>&lt; Anterior</button>
+        <button class="nav-button next" id="nextBtn">Próximo &gt;</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlides();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlides();
+            }
+        });
+
+        updateSlides();
+    </script>
+</body>
+</html>
